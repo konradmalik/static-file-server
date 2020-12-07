@@ -2,11 +2,14 @@
 
 ## Introduction
 
+Disclaimer: this is basically https://github.com/halverneus/static-file-server but slightly larger
+(built on alpine, not scratch) in order to support file copying in kuberenetes.
+
 Tiny, simple static file server using environment variables for configuration.
 Install from any of the following locations:
 
-- Docker Hub: https://hub.docker.com/r/halverneus/static-file-server/
-- GitHub: https://github.com/halverneus/static-file-server
+- Docker Hub: https://hub.docker.com/r/konradmalik/static-file-server/
+- GitHub: https://github.com/konradmalik/static-file-server
 
 ## Configuration
 
@@ -103,7 +106,7 @@ Files can then be accessed by going to http://localhost:8888/my/file.txt
 docker run -d \
     -v /my/folder:/web \
     -p 8080:8080 \
-    halverneus/static-file-server:latest
+    konradmalik/static-file-server:latest
 ```
 
 This will serve the folder "/my/folder" over http://localhost:8080/my/file.txt
@@ -116,7 +119,7 @@ docker run -d \
     -v /home/me/dev/files:/content/more/files \
     -e FOLDER=/content \
     -p 8080:8080 \
-    halverneus/static-file-server:latest
+    konradmalik/static-file-server:latest
 ```
 
 ### Getting Help
@@ -124,5 +127,5 @@ docker run -d \
 ```bash
 ./serve help
 # OR
-docker run -it halverneus/static-file-server:latest help
+docker run -it konradmalik/static-file-server:latest help
 ```
